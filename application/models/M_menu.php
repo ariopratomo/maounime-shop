@@ -73,9 +73,43 @@ class M_menu extends CI_Model
     public function userSubMenus()
     {
         $this->db->select('user_menus.menu,users_sub_menu.*');
-        $this->db->join('user_menus', 'user_menus.id = users_sub_menu.id', 'left');
+        $this->db->join('user_menus', 'user_menus.id = users_sub_menu.menu_id', 'left');
 
         return $this->db->get_where('users_sub_menu')->result();
+    }
+
+    public function editSubMenu()
+    {
+        $this->form_validation->set_rules('title', 'title', 'trim|required');
+        $this->form_validation->set_rules('menuId', 'menu', 'trim|required');
+        $this->form_validation->set_rules('url', 'url', 'trim|required');
+        $data = [
+            'title' => $this->input->post('title'),
+            'menu_id' => $this->input->post('menuId'),
+            'url' => $this->input->post('url'),
+        ];
+        $id = $this->input->post('submenuId');
+        $this->db->where('id', $id);
+        $this->db->update('users_sub_menu', $data);
+    }
+
+    public function addSubMenu()
+    {
+        $this->form_validation->set_rules('title', 'title', 'trim|required');
+        $this->form_validation->set_rules('menuId', 'menu_id', 'trim|required');
+        $this->form_validation->set_rules('url', 'url', 'trim|required');
+        $data = [
+            'title' => $this->input->post('title'),
+            'menu_id' => $this->input->post('menuId'),
+            'url' => $this->input->post('url'),
+        ];
+        $this->db->insert('users_sub_menu', $data);
+    }
+
+    public function deleteSubMenu($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('users_sub_menu');
     }
 }
 

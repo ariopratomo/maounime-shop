@@ -6,15 +6,14 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb ">
                     <li class="breadcrumb-item"><a href="<?= site_url('admin/home') ?>">Admin</a></li>
-                    <li class="breadcrumb-item"><a href="<?= site_url('admin/menu') ?>">Menu</a></li>
-                    <li class=" breadcrumb-item active">Submenu</li>
+                    <li class=" breadcrumb-item active">Role</li>
                 </ol>
             </div>
             <div class="col-sm-6">
                 <div>
                     <button type="button" class="btn btn-primary float-right" data-toggle="modal"
                         data-target="#modalTambah">
-                        Tambah Submenu
+                        Tambah Role
                     </button>
                 </div>
             </div>
@@ -27,7 +26,7 @@
     <div class="container-fluid ">
         <div class="card">
             <div class="card-header">
-                <h4 class="text-center">Tabel Menu User</h4>
+                <h4 class="text-center">Tabel Role</h4>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -35,43 +34,42 @@
                     <table id="table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Nama Submenu</th>
-                                <th>Menu</th>
-                                <th>Url</th>
-                                <th>Status</th>
+                                <th>Role</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($submenus as $sm) : ?>
+                            <?php foreach ($role as $r) : ?>
                             <tr>
-                                <td><?= $sm->title ?></td>
-                                <td><?= $sm->menu ?></td>
-                                <td><?= $sm->url ?></td>
-                                <td align="center">
-                                    <input type="checkbox" class="form-check-input check-submenu"
-                                        <?= sub_menu($sm->id) ?> data-submenu="<?= $sm->id ?>">
-                                </td>
+                                <td><?= $r->role ?></td>
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm" data-toggle="modal"
-                                        data-target="#modalEdit<?= $sm->id ?>">
+                                        data-target="#modalEdit<?= $r->id ?>">
                                         <i class="fa fa-pencil-alt" aria-hidden="true"></i>
                                     </button>
-
-                                    <a href="<?= site_url('admin/menu/delsubmenu/' . $sm->id) ?>"
+                                    <?php if ($r->id != 1) : ?>
+                                    <a href="<?= site_url('admin/role/del/' . $r->id) ?>"
                                         onclick="return confirm('Anda ingin menghapus menu ini ?');"
                                         class="btn btn-danger btn-sm"><i class="fa fa-trash-alt"
                                             aria-hidden="true"></i></a>
+                                    <?php else : ?>
+                                    <a href="#" class="btn btn-danger btn-sm " data-toggle="tooltip"
+                                        data-placement="top" title="tidak dapat menghapus role Superadmin"><i
+                                            class="fa fa-trash-alt" aria-hidden="true"></i></a>
+                                    <?php endif ?>
+
+                                    <a href="<?= site_url('admin/role/roleaccess/' . $r->id) ?>"
+                                        class="btn btn-default btn-sm">Akses Menu</a>
+
                                 </td>
                             </tr>
                             <?php endforeach ?>
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
     </div>
 </section>
 
-<?php $this->load->view('admin/menu/submenu/modalSubmenu'); ?>
+<?php $this->load->view('admin/role/modalRole');
