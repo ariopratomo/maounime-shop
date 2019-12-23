@@ -3,16 +3,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class M_menu extends CI_Model
 {
+    const tbMenu = 'user_menus';
+    const tbSubmenu = 'users_sub_menus';
 
     public function userMenu($roleId)
     {
-        $tableMenu = 'user_menus';
+        $tableMenu = self::tbMenu;
         $tableAccess = 'users_access_menu';
         $isActive = 1;
-        $array = [$tableAccess . '.role_id' => $roleId, 'user_menus.is_active' => $isActive];
-
+        $array = [$tableAccess . '.role_id' => $roleId, self::tbMenu . '.is_active' => $isActive];
+        // $this->db->select($tableMenu . '.id, menu, icon');
         // $this->db->join($tableMenu, $tableMenu . '.id = ' . $tableAccess . '.id');
         // $this->db->where($array);
+
 
         $queryMenu = "SELECT $tableMenu.`id`,`menu`,`icon`
                                 FROM  $tableMenu JOIN $tableAccess 
@@ -37,7 +40,10 @@ class M_menu extends CI_Model
     // 
     public function userMenus()
     {
-        return $this->db->get_where('user_menus', ['menu!=' => 'Menu'])->result();
+        $this->db->where('id!=', 13); // Role
+        $this->db->where('id!=', 10); // Menu
+
+        return $this->db->get(self::tbMenu)->result();
     }
 
     public function editMenu()
@@ -50,7 +56,7 @@ class M_menu extends CI_Model
         ];
         $id = $this->input->post('menuId');
         $this->db->where('id', $id);
-        $this->db->update('user_menus', $data);
+        $this->db->update(self::tbMenu, $data);
     }
 
     public function addMenu()
@@ -61,21 +67,21 @@ class M_menu extends CI_Model
             'menu' => $this->input->post('menu'),
             'icon' => $this->input->post('icon'),
         ];
-        $this->db->insert('user_menus', $data);
+        $this->db->insert(self::tbMenu, $data);
     }
 
     public function deleteMenu($id)
     {
         $this->db->where('id', $id);
-        $this->db->delete('user_menus');
+        $this->db->delete(self::tbMenu);
     }
 
     public function userSubMenus()
     {
-        $this->db->select('user_menus.menu,users_sub_menu.*');
-        $this->db->join('user_menus', 'user_menus.id = users_sub_menu.menu_id', 'left');
+        $this->db->select(self::tbMenu . '.menu,users_sub_menu.*');
+        $this->db->join(self::tbMenu, self::tbMenu . '.id = users_sub_menu.menu_id', 'left');
 
-        return $this->db->get_where('users_sub_menu')->result();
+        return $this->db->get_where('users_sub_menu', ['users_sub_menu.id!=' => 13])->result();
     }
 
     public function editSubMenu()
@@ -110,6 +116,11 @@ class M_menu extends CI_Model
     {
         $this->db->where('id', $id);
         $this->db->delete('users_sub_menu');
+    }
+
+    public function roleMenu()
+    {
+        return $this->db->get_where(self::tbMenu, ['id!=' => 13])->result();
     }
 }
 

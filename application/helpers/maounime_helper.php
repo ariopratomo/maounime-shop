@@ -41,3 +41,13 @@ function sub_menu($submenuId)
         return "checked='checked'";
     }
 }
+function role_access($roleId, $menuId)
+{
+    $ci = get_instance();
+    $ci->db->where('role_id', $roleId);
+    $ci->db->where('menu_id', $menuId);
+    $result = $ci->db->get('users_access_menu')->num_rows();
+    if ($result > 0) {
+        return "checked='checked'";
+    }
+}

@@ -37,10 +37,11 @@
                         <tbody>
                             <?php foreach ($menus as $m) : ?>
                             <tr>
-                                <td><?= $m->menu ?></td>
+                                <td><?= $m->menu ?> </td>
                                 <td align="center">
-                                    <input type="checkbox" class="form-check-input check-access" <?= menu($m->id) ?>
-                                        data-menu="<?= $m->id ?>">
+                                    <input type="checkbox" class="form-check-input check-access"
+                                        <?= role_access($role->id, $m->id) ?> data-menu="<?= $m->id ?>"
+                                        data-role="<?= $role->id ?>">
                                 </td>
                             </tr>
                             <?php endforeach ?>

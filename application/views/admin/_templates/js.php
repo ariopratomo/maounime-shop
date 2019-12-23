@@ -11,7 +11,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url() ?>includes/dist/js/demo.js"></script>
 
-<script src="<?= base_url() ?>includes/dist/js/script.js?version=0.25"></script>
+<script src="<?= base_url() ?>includes/dist/js/script.js?version=0.26"></script>
 <script>
 
 </script>

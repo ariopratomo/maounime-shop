@@ -57,7 +57,6 @@
                                         data-placement="top" title="tidak dapat menghapus role Superadmin"><i
                                             class="fa fa-trash-alt" aria-hidden="true"></i></a>
                                     <?php endif ?>
-
                                     <a href="<?= site_url('admin/role/roleaccess/' . $r->id) ?>"
                                         class="btn btn-default btn-sm">Akses Menu</a>
 

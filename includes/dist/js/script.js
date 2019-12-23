@@ -1,11 +1,8 @@
 $(document).ready(function () {
 
-
-
 	$('#table').DataTable();
 
 	$('.check-menu').on('click', function () {
-		console.log('change')
 		const menuId = $(this).data('menu');
 		$.ajax({
 			url: 'menu/statuschange',
@@ -19,8 +16,8 @@ $(document).ready(function () {
 			}
 		})
 	})
+
 	$('.check-submenu').on('click', function () {
-		console.log('change')
 		const subMenuId = $(this).data('submenu');
 		$.ajax({
 			url: 'submenustatuschange',
@@ -31,6 +28,30 @@ $(document).ready(function () {
 			success: function () {
 				document.location.href = 'submenu'
 
+			}
+		})
+	})
+
+	$('.check-access').on('click', function () {
+		const MenuId = $(this).data('menu');
+		const RoleId = $(this).data('role');
+
+		$.ajax({
+			url: '/maounime-shop/admin/role/accesschange',
+			type: 'post',
+			data: {
+				MenuId: MenuId,
+				RoleId: RoleId
+			},
+			success: function () {
+				document.location.href = RoleId
+
+			},
+			error: function () {
+				// $('#table_kata_sara').load("index.php?p=kata_sara");
+				console.log("error ");
+				console.log(MenuId);
+				console.log(RoleId);
 			}
 		})
 	})

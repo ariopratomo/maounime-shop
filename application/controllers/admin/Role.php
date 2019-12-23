@@ -41,9 +41,30 @@ class Role extends CI_Controller
 	public function roleAccess($id = null)
 	{
 		if (!isset($id)) $this->template->load('admin/_templates/master', 'admin/404');
-		$data['menus'] = $this->menu->userMenus();
+		$data['menus'] = $this->menu->roleMenu();
 		$data['role'] = $this->role->getRoleByid($id);
 		$this->template->load('admin/_templates/master', 'admin/role/role-access/view', $data);
+	}
+
+	public function accessChange()
+	{
+		// Ajax change hak akses menu
+
+		$menu_id = $this->input->post('MenuId');
+		$role_id = $this->input->post('RoleId');
+
+		$data = [
+			'role_id' => $role_id,
+			'menu_id' => $menu_id,
+		];
+
+		$access = $this->db->get_where('users_access_menu', $data);
+		if ($access->num_rows() < 1) {
+			$this->db->insert('users_access_menu', $data);
+		} else {
+			$this->db->delete('users_access_menu', $data);
+		}
+		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Akses berhasil diubah.</div>');
 	}
 }
 
