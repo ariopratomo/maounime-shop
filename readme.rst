@@ -1,4 +1,24 @@
 ###################
+Maounime Shop
+###################
+
+Online Shop / Distro Online Sederhana dengan Framework Codeigniter.
+
+*********
+Fitur :
+*********
+
+#Admin
+- Admin Panel with akses level
+- Menu Managemen
+- Role menu akses
+- つづく
+
+
+
+
+
+###################
 What is CodeIgniter
 ###################
 

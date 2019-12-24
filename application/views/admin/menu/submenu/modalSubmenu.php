@@ -4,7 +4,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalTambahLabel">Tambah Menu</h5>
+                <h5 class="modal-title" id="modalTambahLabel">Tambah Submenu</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -31,7 +31,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Pilih Menu</label>
                         <div class="col-sm-9">
-                            <select class="custom-select" name="menuId">
+                            <select class="custom-select" name="menuId" required>
                                 <option selected value="">Pilih Menu</option>
                                 <?php foreach ($menus as $m) : ?>
                                 <option value="<?= $m->id ?>"><?= $m->menu ?></option>
@@ -58,7 +58,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalEditLabel">Edit Menu (<?= $sm->title ?>)</h5>
+                <h5 class="modal-title" id="modalEditLabel">Edit Submenu (<?= $sm->title ?>)</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -86,7 +86,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Pilih Menu</label>
                         <div class="col-sm-9">
-                            <select class="custom-select" name="menuId">
+                            <select class="custom-select" name="menuId" required>
                                 <option selected value="">Pilih Menu</option>
                                 <?php foreach ($menus as $m) : ?>
                                 <option <?php if ($m->id == $sm->menu_id) : ?> selected

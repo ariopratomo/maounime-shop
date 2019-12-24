@@ -27,7 +27,7 @@
     <div class="container-fluid ">
         <div class="card">
             <div class="card-header">
-                <h4 class="text-center">Tabel Menu User</h4>
+                <h4 class="text-center">Tabel Submenu User</h4>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
