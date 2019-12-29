@@ -15,6 +15,11 @@ Admin
 - Role menu akses
 - つづく
 
+Other
+-----
+- Test PWA gesss
+- つづく
+
 
 
 
