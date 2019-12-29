@@ -22,7 +22,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="<?= base_url() ?>includes/index2.html"><b>Admin</b>Maounime</a>
+            <a href="<?= site_url('admin/auth') ?>"><b>Admin</b>Maounime</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
@@ -33,9 +33,8 @@
                     form_open('');
                 ?>
                 <div class="input-group ">
-                    <input type="email" name="email" value="<?= set_value('email') ?>" class="form-control"
+                    <input type="email" name="email" value="<?php echo set_value('email') ?>" class="form-control"
                         placeholder="Email">
-
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
@@ -53,7 +52,6 @@
                     </div>
                 </div>
                 <?= form_error('password', '<small class="text-danger pl-1">', '</small>') ?>
-
                 <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
 
                 <!-- /.col -->

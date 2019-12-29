@@ -51,3 +51,20 @@ function role_access($roleId, $menuId)
         return "checked='checked'";
     }
 }
+
+function tgl_indo($date)
+{
+    $BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+
+    $tahun = substr($date, 2, 2);
+    $bulan = substr($date, 5, 2);
+    $tgl   = substr($date, 8, 2);
+    $result = $tgl . "-" . $BulanIndo[(int) $bulan - 1] . "-" . $tahun;
+    return ($result);
+}
+function rupiah($angka)
+{
+
+    $hasil_rupiah = "Rp " . number_format($angka, 0, ',', '.') . ",-";
+    return $hasil_rupiah;
+}

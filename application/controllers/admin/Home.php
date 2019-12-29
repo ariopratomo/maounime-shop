@@ -9,7 +9,6 @@ class Home extends CI_Controller
     {
         $this->template->load('admin/_templates/master', 'admin/home');
     }
-
 }
 
 /* End of file Home.php */

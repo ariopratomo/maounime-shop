@@ -18,6 +18,7 @@ class Auth extends CI_Controller
 			$data['title'] = 'Admin - Login';
 			$this->load->view('admin/auth/login');
 		} else {
+
 			$this->_login();
 		}
 	}
@@ -29,9 +30,7 @@ class Auth extends CI_Controller
 		$user = $this->db->get_where('users', ['email' => $email])->row();
 
 		if ($user) {
-			// if admin active
-			// if ($user['is_active'] == 1) {
-			// check password
+
 			if (password_verify($password, $user->password)) {
 				$data = [
 					'email' => $email,
@@ -43,10 +42,6 @@ class Auth extends CI_Controller
 				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
 				redirect('admin/auth');
 			}
-			// } else {
-			// 	$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">This email has not been activated! </div>');
-			// 	redirect('auth');
-			// }
 		} else {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Email is not registered!</div>');
 			redirect('admin/auth');
