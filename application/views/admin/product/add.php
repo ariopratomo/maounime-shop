@@ -37,8 +37,9 @@
                                 <label for="id_category">Kategori</label>
                                 <select class="form-control" name="id_category" id="id_category">
                                     <option value="">Pilih Kategori</option>
-                                    <option></option>
-                                    <option></option>
+                                    <?php foreach ($category as $cat) : ?>
+                                    <option value="<?= $cat->id_category ?>"><?= $cat->category_name ?></option>
+                                    <?php endforeach ?>
                                 </select>
                             </div>
                         </div>
@@ -73,6 +74,13 @@
                                 required><?= set_value('desc_product') ?></textarea>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="keyword_product">Keyword Product <small>(Seo)</small></label> <input type="text"
+                            class="form-control" name="keyword_product" id="keyword_product"
+                            placeholder="keyword1, keyword2. keyword3" value="<?= set_value('keyword_product') ?>"
+                            required="" maxlength="50">
+                        <?= form_error('keyword_product', '<small class="text-danger pl-1">', '</small>') ?>
+                    </div>
                     <div class="row">
                         <div class="col-md">
                             <div class="form-group">
@@ -95,7 +103,7 @@
 
                     <div class="float-right mt-3">
                         <a href="<?= site_url('admin/product') ?>" type="button" class="btn btn-default">Batal</a>
-                        <button type="submit" class="btn btn-primary  ml-2" name="submit">Tambah</button>
+                        <button type="submit" class="btn btn-primary  ml-2" name="submit" value="add">Tambah</button>
                     </div>
                 </form>
                 <!-- /.card-footer -->

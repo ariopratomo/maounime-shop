@@ -11,8 +11,14 @@
             </div>
             <div class="col-sm-6">
                 <div>
-                    <a href="<?= site_url('admin/product/cat') ?>" class="btn btn-primary float-right">Tambah Produk</a>
-
+                    <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                        data-target="#tambahKategori">
+                        Tambah Kategori
+                    </button>
+                    <?php
+                    $this->load->view('admin/product/category/modal/add');
+                    $this->load->view('admin/product/category/modal/edit');
+                    ?>
                 </div>
             </div>
         </div>
@@ -33,7 +39,7 @@
                         <thead>
                             <tr>
                                 <th>Kategori</th>
-                                <th>Kode Kategori</th>
+                                <th>Slug Kategori</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -44,7 +50,7 @@
                                     <div class="d-flex flex-row">
                                         <div>
                                             <img class="border rounded" src="<?= base_url('assets/img/') //. //$p->img_product ) 
-																													?>" style="width: 50px;">
+                                                                                    ?>" style="width: 50px;">
                                         </div>
                                         <div class="pl-2">
                                             <?= $c->category_name ?>
@@ -52,12 +58,15 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <?= $c->category_code ?>
+                                    <?= $c->category_slug ?>
                                 </td>
-                                <td><a href="<?= base_url('admin/product/edit/' . $c->id_category) ?>"
-                                        class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top"
-                                        title="Edit produk"><i class="fas fa-pen"></i></a>
-                                    <a href="<?= site_url('admin/product/del/' . $c->id_category) ?>"
+                                <td>
+                                    <button type="button" class="btn btn-warning btn-sm" data-toggle="modal"
+                                        data-target="#editKategori<?= $c->id_category ?>" title="Edit produk">
+                                        <i class="fas fa-pen"></i>
+                                    </button>
+
+                                    <a href="<?= site_url('admin/product/delcat/' . $c->id_category) ?>"
                                         onclick="return confirm('Anda ingin menghapus produk ini ?');"
                                         class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top"
                                         title="Hapus produk"><i class="fa fa-trash-alt" aria-hidden="true"></i></a>

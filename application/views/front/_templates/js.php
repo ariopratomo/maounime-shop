@@ -35,6 +35,7 @@ $(document).ready(function() {
             }
         }
     })
+
 });
 </script>
 
@@ -45,6 +46,17 @@ UpUp.start({
     'cache-version': 'v2',
     'content-url': 'offline.html',
     'service-worker-url': 'upup.sw.min.js'
+});
+</script>
+<script>
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 30) {
+        $("#navweb").addClass("fixed-top");
+    } else {
+        $("#navweb").removeClass("fixed-top");
+    }
 });
 </script>
 

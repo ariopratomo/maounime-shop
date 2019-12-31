@@ -33,6 +33,7 @@
                         <thead>
                             <tr>
                                 <th>Produk</th>
+                                <th>Kategori</th>
                                 <th>Harga awal</th>
                                 <th>Diskon</th>
                                 <th>Harga akhir</th>
@@ -58,13 +59,14 @@
                                         </div>
                                     </div>
                                 </td>
+                                <td><?= $p->category_name ?></td>
                                 <td><?= rupiah($p->first_price) ?></td>
                                 <td><?= $p->discount ?>%</td>
                                 <td><?= rupiah($p->last_price) ?></td>
                                 <td><?= $p->stock_product ?></td>
                                 <td><?= $p->weight_product ?> gr</td>
-                                <td><?= date('d-m-Y', $p->created_at) ?></td>
-                                <td><?= date('d-m-Y', $p->updated_at) ?></td>
+                                <td><?= date('d-m-Y H:i:s A', $p->created_at) ?></td>
+                                <td><?= date('d-m-Y  H:i:s A', $p->updated_at) ?></td>
 
                                 <td><a href="<?= base_url('admin/product/edit/' . $p->id_product) ?>"
                                         class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top"
