@@ -1,5 +1,5 @@
 <div class="nav-web">
-    <div class="bg-light">
+    <!-- <div class="bg-light">
         <ul class="nav justify-content-end  pr-4 container flex-column flex-sm-row" style="height: 30px">
             <li class="nav-item dropdown ">
                 <a class="nav-link dropdown-toggle p-0 pt-1 mx-3" data-toggle="dropdown" href="#" role="button"
@@ -16,8 +16,8 @@
                 <a class="nav-link p-0 pt-1" href="#"><i class="fas fa-user-alt "></i> Profile</a>
             </li>
         </ul>
-    </div>
-    <nav class="navbar navbar-light bg-white shadow-sm" id="navweb">
+    </div> -->
+    <nav class="navbar navbar-light bg-white shadow-sm fixed-top" id="navweb">
         <div class="container ">
             <a class="navbar-brand font-weight-bold text-muted">M-SHOP</a>
             <form class="form-inline ">

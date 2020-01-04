@@ -51,15 +51,17 @@ UpUp.start({
 });
 </script>
 <script>
-$(window).scroll(function() {
-    var scroll = $(window).scrollTop();
+// $(window).scroll(function() {
+//     var scroll = $(window).scrollTop();
 
-    if (scroll >= 30) {
-        $("#navweb").addClass("fixed-top");
-    } else {
-        $("#navweb").removeClass("fixed-top");
-    }
-});
+//     if (scroll >= 30) {
+//         $("#navweb").addClass("fixed-top");
+//         $("#content").css("padding-top", "67px");
+//     } else {
+//         $("#navweb").removeClass("fixed-top");
+//         $("#content").css("padding-top", "");
+//     }
+// });
 </script>
 
 </body>

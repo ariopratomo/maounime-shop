@@ -22,7 +22,7 @@
     </div>
     <div class="row mt-4">
         <?php
-		foreach ($RandomProduct as $rProd) : ?>
+        foreach ($RandomProduct as $rProd) : ?>
 
         <div class="col-md-3 col-6">
             <figure class="card card-product-grid rounded-lg">
@@ -32,12 +32,13 @@
 
                 <figcaption class="info-wrap">
                     <div class="fix-height">
-                        <a href="#" class="title"><?= $rProd->name_product ?></a>
+                        <a href="<?= site_url('product/detail/' . $rProd->slug_product) ?>"
+                            class="title"><?= $rProd->name_product ?></a>
                         <div class="price-wrap mt-2">
                             <span class="price"><?= rupiah($rProd->last_price) ?></span>
                         </div> <!-- price-wrap.// -->
                     </div>
-                    <a href="#" class="btn btn-block btn-primary">Beli</a>
+
                 </figcaption>
             </figure>
         </div>
