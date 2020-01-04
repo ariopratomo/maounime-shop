@@ -10,6 +10,7 @@
         </div>
     </form>
     <a href=""><i class="fas fa-heart fa-1-5 text-secondary "></i></a>
-    <a href=""><i class="fas fa-shopping-cart fa-1-5 text-secondary "> <span
-                class="badge  badge-danger rounded">1</span></i></a>
+    <button id="m-cart" class="btn btn-primary-outline"><i class="fas fa-shopping-cart fa-1-5 text-secondary "> <span
+                class="badge badge-danger rounded">1</span></i></button>
+
 </nav>

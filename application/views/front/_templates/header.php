@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css?v=0.1') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/plugins/owl/dist/assets/owl.carousel.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/plugins/owl/dist/assets/owl.theme.default.min.css') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"

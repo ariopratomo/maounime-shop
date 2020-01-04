@@ -3,6 +3,7 @@
 $this->load->view('front/_templates/header');
 $this->load->view('front/_templates/nav-web');
 $this->load->view('front/_templates/nav-mobile');
+$this->load->view('front/_templates/cart-model');
 ?>
 <div class="content-wrapper">
     <?= $contents ?>

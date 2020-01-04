@@ -172,7 +172,7 @@
                     <hr>
                     <div class="form-group">
                         <label for="">Provinsi</label>
-                        <select class="form-control" name="" id="">
+                        <select class="form-control">
                             <option value="">Pilih Provinsi</option>
                             <option></option>
                             <option></option>
@@ -182,7 +182,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Kabupaten/Kota</label>
-                                <select class="form-control" name="" id="">
+                                <select class="form-control">
                                     <option value="">Pilih Kab/Kota</option>
                                     <option></option>
                                     <option></option>
@@ -192,7 +192,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="">Kecamatan</label>
-                                <select class="form-control" name="" id="">
+                                <select class="form-control">
                                     <option value="">Pilih Kecamatan</option>
                                     <option></option>
                                     <option></option>
@@ -203,7 +203,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Alamat lengkap</label>
-                        <textarea class="form-control" name="" id="" rows="3"></textarea>
+                        <textarea class="form-control" rows="3"></textarea>
                     </div>
 
 

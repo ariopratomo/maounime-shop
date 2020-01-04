@@ -166,7 +166,7 @@ class M_product extends CI_Model
 		if ($upload_image) {
 
 			$config['upload_path']   = './assets/img/';
-			$config['allowed_types'] = 'gif|jpg|png';
+			$config['allowed_types'] = 'gif|jpg|png|webp';
 			$config['file_name']     =  strtolower(url_title($this->input->post('name_product'))) . "_" . date('Y', time());
 			$config['overwrite']     = true;
 			$config['max_size']      = '2048';

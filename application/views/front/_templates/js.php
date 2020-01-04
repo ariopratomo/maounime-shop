@@ -1,12 +1,14 @@
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="<?= base_url('assets/js/jquery-3.4.1.min.js') ?>"> </script>
-<script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+<script src="<?= base_url('assets/js/popper.min.js') ?>"> </script>
 
 <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"> </script>
+<script src="<?= base_url('assets/js/script.js') ?>"> </script>
 <script src="<?= base_url('assets/plugins/owl/dist/owl.carousel.min.js') ?>"> </script>
 <script>
 $(document).ready(function() {
+    $(".shopping-cart").fadeToggle("fast");
     $(".owl-one").owlCarousel({
         items: 1,
         lazyLoad: true,

@@ -19,12 +19,13 @@
     <div class="mt-4 mb-3">
         <a href="#" class="btn btn-outline-primary float-right">Lihat Semua</a>
         <h5 class="section-title mt-3 mb-3">Produk</h5>
-
     </div>
     <div class="row mt-4">
-        <?php foreach ($RandomProduct as $rProd) : ?>
+        <?php
+		foreach ($RandomProduct as $rProd) : ?>
+
         <div class="col-md-3 col-6">
-            <figure class="card card-product-grid">
+            <figure class="card card-product-grid rounded-lg">
                 <div class="img-wrap">
                     <img src="<?= base_url('assets/img/' . $rProd->img_product) ?>">
                 </div> <!-- img-wrap.// -->
@@ -37,17 +38,9 @@
                         </div> <!-- price-wrap.// -->
                     </div>
                     <a href="#" class="btn btn-block btn-primary">Beli</a>
-
                 </figcaption>
             </figure>
         </div>
         <?php endforeach ?>
     </div>
-
-
-
-
-
-
-
 </div>
