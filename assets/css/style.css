@@ -1,12 +1,11 @@
 body {
-  background-color: #f1f1f1;
+  background-color: #f6f7f9;
+}
+.form-control {
+  background-color: #f3f4f5;
+  border: none;
 }
 
-header {
-  padding: 0.2rem 0;
-  border-bottom: 1px solid #e9e9e9;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.05);
-}
 .nav-mobile > .btn {
   padding: 0px !important;
 }
@@ -17,9 +16,12 @@ header {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 .content {
-  margin-top: 67px;
+  margin-top: 60px;
 }
-
+.form-control {
+  background-color: #f3f4f5;
+  border: none;
+}
 .card .img-wrap {
   overflow: hidden;
 }
@@ -67,8 +69,9 @@ header {
 }
 
 [class*="card-product"] .badge {
-  top: 10px;
-  left: 10px;
+  padding: 3px 10px;
+  border-radius: 2px 0px 10px 0px;
+  position: absolute;
   position: absolute;
 }
 
@@ -101,13 +104,18 @@ header {
   border-color: #6394f8;
 }
 .bg-maou {
+  background-color: rgb(99, 148, 248) !important;
+}
+.btn-form {
+  background-color: #f3f4f5;
+  border: none;
+}
+.text-maou {
+  color: #6394f8 !important;
+}
+.badge-maou {
+  color: #fff;
   background-color: #6394f8 !important;
-}
-.breadcrumb > li + li:before {
-  color: #fff !important;
-}
-.breadcrumb-item a {
-  color: #fff !important;
 }
 
 @media (max-width: 320px) {
@@ -156,12 +164,17 @@ header {
   .fa-1-5 {
     font-size: 1.5em;
   }
-  .nav-web {
+  .nav-web,
+  footer {
     display: none;
   }
   .content {
     margin-top: 50px;
     padding-top: 15px;
+  }
+  .content {
+    margin-bottom: 50px;
+    padding-bottom: 15px;
   }
   footer {
     margin-bottom: 50px;
@@ -175,10 +188,7 @@ header {
     font-family: sans-serif;
     margin-right: 0.8rem;
   }
-  .form-control {
-    background-color: #f3f4f5;
-    border: none;
-  }
+
   .input-group > .input-group-append > .btn,
   .input-group > .input-group-append > .input-group-text,
   .input-group > .input-group-prepend:not(:first-child) > .btn,
@@ -194,10 +204,6 @@ header {
   .input-group > .custom-select:not(:last-child) {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
-  }
-  .btn-form {
-    background-color: #f3f4f5;
-    border: none;
   }
 
   .animate-bottom {
@@ -249,7 +255,7 @@ header {
 }
 @media (max-width: 375px) {
   .w-search {
-    width: 75% !important;
+    width: 60% !important;
   }
   .card-product-grid .img-wrap {
     height: 130px;
@@ -262,9 +268,15 @@ header {
     right: 1px !important;
     width: -webkit-fill-available !important;
   }
+
   .fixed {
     right: 1px !important;
     width: -webkit-fill-available !important;
+  }
+}
+@media (min-width: 400px) {
+  .w-search {
+    width: 72% !important;
   }
 }
 @media (min-width: 576px) {
@@ -285,8 +297,6 @@ header {
   margin-top: -16px;
 }
 .badge {
-  background-color: #6394f8;
-  border-radius: 10px;
   color: white;
   display: inline-block;
   font-size: 12px;

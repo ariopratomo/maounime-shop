@@ -54,7 +54,7 @@
     transform: scale(1);
 }
 </style>
-
+<?php if ($this->uri->segment(1) != true) : ?>
 <nav
     class="navbar navbar-expand-lg navbar-light  bg-white fixed-bottom shadow-sm nav-bottom pl-4 pr-4 d-flex justify-content-center">
 
@@ -81,6 +81,8 @@
     </div>
 
 </nav>
+<?php endif ?>
+
 
 
 <!-- Modal Login-->

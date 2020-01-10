@@ -17,7 +17,7 @@
     </div>
 
     <div class="mt-4 mb-3">
-        <a href="#" class="btn btn-outline-primary float-right">Lihat Semua</a>
+        <a href="<?= site_url('product') ?>" class="btn btn-outline-primary float-right">Lihat Semua</a>
         <h5 class="section-title mt-3 mb-3">Produk</h5>
     </div>
     <div class="row mt-4">

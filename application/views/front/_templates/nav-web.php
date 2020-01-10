@@ -24,7 +24,7 @@
                 <div class="input-group ">
                     <input type="text" class="form-control" placeholder="Cari produk...">
                     <div class="input-group-append">
-                        <button class="btn btn-dark" type="button"><i class="fas fa-search "></i></button>
+                        <button class="btn btn-form " type="button"><i class="fas fa-search "></i></button>
                     </div>
                 </div>
             </form>
@@ -39,7 +39,7 @@
                 <li class="nav-item">
                     <button class="nav-link p-0 pt-1 text-muted btn btn-primary-outline" id="cart"
                         class=" text-decoration-none"><i class="fa fa-shopping-cart fa-lg"></i> <span
-                            class="badge badge-pill badge-danger cart-count"
+                            class="badge badge-pill badge-maou cart-count"
                             style="position: relative;right: 10px;top: -10px;">0</span></button>
                 </li>
             </ul>

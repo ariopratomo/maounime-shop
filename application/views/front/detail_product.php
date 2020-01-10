@@ -6,15 +6,11 @@
             <li class="breadcrumb-item text-dark" aria-current="page"><?= $detailP->name_product ?></li>
         </ol>
         <div class="card-body">
-
-
-
             <div class="row">
                 <div class="col-md-4"><img src="<?= base_url('assets/img/' . $detailP->img_product) ?>"
                         class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
                         alt=""></div>
                 <div class="col"></div>
-
             </div>
             <br>
             <br>
