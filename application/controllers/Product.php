@@ -21,7 +21,7 @@ class Product extends CI_Controller
 	}
 	public function detail($slug = null)
 	{
-		$data['detailP'] = $this->db->get_where('products', ['slug_product' => $slug])->row();
+		$data['detailP'] = $this->product->getProductBySlug($slug);
 		$this->template->load('front/_templates/master', 'front/detail_product', $data);
 	}
 

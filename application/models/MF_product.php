@@ -30,6 +30,13 @@ class MF_product extends CI_Model
 		$this->db->group_by('id_category');
 		return $this->db->get(self::table)->result();
 	}
+
+	// Get Product by slugp product url
+	public function getProductBySlug($slug)
+	{
+		$this->db->join(self::categories, self::categories . '.id_category = ' . self::table . '.id_category', 'left');
+		return $this->db->get_where(self::table, ['slug_product' => $slug])->row();
+	}
 }
 
 /* End of file MF_product.php */
